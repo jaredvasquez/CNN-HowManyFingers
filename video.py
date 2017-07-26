@@ -13,7 +13,8 @@ className = 'NONE'
 count = 0
 showMask = 0
 
-classes = ['OPEN','CLOSED']
+classes = 'OPEN CLOSED'.split()
+classes = 'NONE ONE TWO THREE FOUR FIVE'.split()
 
 
 def initClass(name):
@@ -38,7 +39,8 @@ def main():
     global className, count
     global showMask
 
-    model = load_model('model.h5')
+    #model = load_model('model.h5')
+    model = load_model('model_6cat.h5')
 
     x0, y0, width = 200, 220, 300
     #x0, y0, width = 800, 200, 300
@@ -80,7 +82,8 @@ def main():
             img = np.float32(roi)/255.
             img = np.expand_dims(img, axis=0)
             img = np.expand_dims(img, axis=-1)
-            pred = classes[ int(np.round(model.predict(img)[0][0])) ]
+            #pred = classes[ int(np.round(model.predict(img)[0][0])) ]
+            pred = classes[np.argmax(model.predict(img)[0])]
             cv2.putText(window, 'Prediction: %s' % (pred), (fx,fy+2*fh), font, 1.0, (245,210,65), 2, 1)
 
         #plt.imshow(roi, cmap='gray')
