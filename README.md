@@ -70,7 +70,7 @@ model.add(Dense(6, activation='sigmoid'))
 
 # Training and Performance
 
-The model is trained with TensorFlow backend using a NVIDIA GeForce Titan X Pascl for 39 epochs using batches of 128 images each. The training inputs are augmented with small randomized zooms, rotations and translations for each instance in training. A testing performance of greater than 90% accuracy is achieved, surpassing human perform in the case that the human is severely concussed or inebriated.
+The model is trained with TensorFlow backend using a NVIDIA GeForce Titan X Pascal for 39 epochs using batches of 128 images each. The training inputs are augmented with small randomized zooms, rotations and translations for each instance in training. A testing performance of greater than 90% accuracy is achieved, surpassing human perform in the case that the human is severely concussed or inebriated.
 
 ![](http://i.imgur.com/4CJP793.png)
 
