@@ -37,4 +37,4 @@ data the outline of the ROI will turn green and turn red again when collection i
 The model's predictions are sensitive to shadows and lighting in the region of interest. The model can also be 
 sensitive to features in the background. Refined image processing could be more robust to the lighting
 and able to isolate the hands features better. Alternatively, additional training data or augmentation with 
-busy bakgrounds and various lighting might make the model more robust.
+busy backgrounds and various lighting might make the model more robust.
