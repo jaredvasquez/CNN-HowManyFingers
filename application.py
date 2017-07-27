@@ -103,7 +103,7 @@ def main():
 
         # Toggle class
         elif key == ord('0'):  initClass('NONE')
-        elif key == ord('`'):  initClass('NONE')
+        elif key == ord('`'):  initClass('NONE') # because 0 is on other side of keyboard
         elif key == ord('1'):  initClass('ONE')
         elif key == ord('2'):  initClass('TWO')
         elif key == ord('3'):  initClass('THREE')
