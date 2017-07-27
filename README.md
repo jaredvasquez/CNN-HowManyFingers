@@ -16,7 +16,7 @@ The pretrained model used by the application is can be downloaded from google dr
 Simply run `application.py` and hold your fingers up in the highlighted region of interest (ROI).
 The model performs best when provided a plain background without many features.
 
-### Hot Keys
+### Hotkeys
 * The ROI on the screen can be moved using the `i`, `j`, `k`, and `l` keys.
 * Show the binary mask being applied to the ROI by toggling the `b` key.
 * Quit the application by pressing the `q` key.
