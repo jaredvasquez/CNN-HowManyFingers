@@ -33,6 +33,47 @@ To collect data, you must first select the target class 0 through 5 by hitting t
 Once you have selected your target class, you can start/stop collecting data by toggling the `s` key. When collecting 
 data the outline of the ROI will turn green and turn red again when collection is stopped.
 
+# Feature Input
+
+Images are captured within a ROI from the webcam using OpenCV. To help simplify the inputs that are analyzed by the CNN, a binary mask is applied to highlight the hands edges. The binary mask is defined by grayscaling and blurring the image and then applying thresholding as shown below:
+
+```
+img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+img = cv2.GaussianBlur(img, (7,7), 3)
+img = cv2.adaptiveThreshold(img, 255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C, cv2.THRESH_BINARY_INV, 11, 2)
+ret, new = cv2.threshold(img, 25, 255, cv2.THRESH_BINARY_INV + cv2.THRESH_OTSU)
+```
+
+A dataset is collected within the application by holding up 0 to 5 digits at different positions and orientations within the application's ROI. A training set of ~1500 images and validation set of ~300 images for each case is used for training the CNN. 
+
+![](http://i.imgur.com/4DJ2QhH.png)
+
+# Convolution Neural Net
+
+The CNN used for this projects consists of 4 convolutional layers with 3x3 kernels, RELU activations and integer multiples of 32 filters in each layer. Between each convolutional layer MaxPooling is  appled to reduce the models dimensionality. The feature maps produced by the convolutions are passed to a dense layer with 512 nodes and RELU activation before being fed to a sigmoid output layer with 6 nodes, defining each class.
+
+```
+model = Sequential()
+model.add(Conv2D(32, (3,3), activation='relu', input_shape=(300,300,1)))
+model.add(MaxPooling2D((2,2)))
+model.add(Conv2D(64, (3,3), activation='relu'))
+model.add(MaxPooling2D((2,2)))
+model.add(Conv2D(128, (3,3), activation='relu'))
+model.add(MaxPooling2D((2,2)))
+model.add(Conv2D(128, (3,3), activation='relu'))
+model.add(MaxPooling2D((2,2)))
+model.add(Flatten())
+model.add(Dense(512, activation='relu'))
+model.add(Dropout(0.3))
+model.add(Dense(6, activation='sigmoid'))
+```
+
+# Training and Performance
+
+The model is trained with TensorFlow backend using a NVIDIA GeForce Titan X Pascl for 39 epochs using batches of 128 images each. The training inputs are augmented with small randomized zooms, rotations and translations for each instance in training. A testing performance of greater than 90% accuracy is achieved, surpassing human perform in the case that the human is severely concussed or inebriated.
+
+![](http://i.imgur.com/4CJP793.png)
+
 ## Room for improvement
 The model's predictions are sensitive to shadows and lighting in the region of interest. The model can also be 
 sensitive to features in the background. Refined image processing could be more robust to the lighting
