@@ -1,6 +1,8 @@
 # CNN-HowManyFingers
 Count how many fingers are being held up, via a convolutional neural network (CNN) implemented in Keras + TensorFlow + OpenCV.
 
+The model surpasses human perform in the cases that the human is severely concussed or inebriated.
+
 Key Requirements: Python 3+, Keras 2+, TensorFlow 1+, OpenCV 2+
 
 ## Contents
