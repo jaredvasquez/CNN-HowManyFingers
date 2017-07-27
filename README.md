@@ -30,3 +30,9 @@ The model performs best when provided a plain background without many features.
 To collect data, you must first select the target class 0 through 5 by hitting the corresponding key on your keyboard.
 Once you have selected your target class, you can start/stop collecting data by toggling the `s` key. When collecting 
 data the outline of the ROI will turn green and turn red again when collection is stopped.
+
+## Room for improvement
+The model's predictions are sensitive to shadows and lighting in the region of interest. The model can also be 
+sensitive to features in the background. Refined image processing could be more robust to the lighting
+and able to isolate the hands features better. Alternatively, additional training data or augmentation with 
+busy bakgrounds and various lighting might make the model more robust.
