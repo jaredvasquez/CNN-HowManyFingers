@@ -3,6 +3,10 @@ Count how many fingers are being held up, via a convolutional neural network (CN
 
 Key Requirements: Python 3+, Keras 2+, TensorFlow 1+, OpenCV 2+
 
+
+## Demo
+![](http://i.imgur.com/6Dw48MX.gif)
+
 ## Contents
 * **application.py** - application to used to collect data and predict number of fingers on the fly
 * **trainModel.ipynb** - jupyter notebook used for training model
@@ -11,9 +15,6 @@ Key Requirements: Python 3+, Keras 2+, TensorFlow 1+, OpenCV 2+
 * [**model_6cat.h5**](https://drive.google.com/file/d/0B5sZ8q5iqYbtZjRRRW1SUVl2SlU/view?usp=sharing) - pretrained model
 
 The pretrained model used by the application is can be downloaded from google drive, linked above.
-
-## Demo
-![](http://i.imgur.com/6Dw48MX.gif)
 
 ## Usage
 Simply run `application.py` and hold your fingers up in the highlighted region of interest (ROI).
