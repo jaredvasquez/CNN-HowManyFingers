@@ -24,8 +24,8 @@ classes = 'NONE ONE TWO THREE FOUR FIVE'.split()
 def initClass(name):
     global className, count
     className = name
-    os.system('mkdir -p images/%s' % name)
-    count = len(os.listdir('images/%s' % name))
+    os.system('mkdir -p data/%s' % name)
+    count = len(os.listdir('data/%s' % name))
 
 
 def binaryMask(img):
@@ -75,7 +75,7 @@ def main():
 
         # take data or apply predictions on ROI
         if takingData:
-             cv2.imwrite('images/{0}/{0}_{1}.png'.format(className, count), roi)
+             cv2.imwrite('data/{0}/{0}_{1}.png'.format(className, count), roi)
              count += 1
         else:
             img = np.float32(roi)/255.
