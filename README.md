@@ -1,5 +1,5 @@
 # CNN-HowManyFingers
-Application to count how many fingers are being held up, via a convolutional neural network (CNN) implemented in Keras + TensorFlow + OpenCV.
+Count how many fingers are being held up, via a convolutional neural network (CNN) implemented in Keras + TensorFlow + OpenCV.
 
 Key Requirements: Python 3+, Keras 2+, TensorFlow 1+, OpenCV 2+
 
