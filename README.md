@@ -12,7 +12,9 @@ Key Requirements: Python 3+, Keras 2+, TensorFlow 1+, OpenCV 2+
 The pretrained model used by the application is can be downloaded from google drive, linked above.
 
 ## Demo
+Demos with and without binary mask visible. Noise is coming from camera on macbook. 
 ![](http://i.imgur.com/6Dw48MX.gif)
+![](http://i.imgur.com/H8PCFeh.gif)
 
 ## Usage
 Simply run `application.py` and hold your fingers up in the highlighted region of interest (ROI).
