@@ -118,13 +118,13 @@ def main():
 
         # adjust the position of window
         elif key == ord('i'):
-            y0 = y0 - 5
+            y0 = max((y0 - 5, 0))
         elif key == ord('k'):
-            y0 = y0 + 5
+            y0 = min((y0 + 5, window.shape[0]-width))
         elif key == ord('j'):
-            x0 = x0 - 5
+            x0 = max((x0 - 5, 0))
         elif key == ord('l'):
-            x0 = x0 + 5
+            x0 = min((x0 + 5, window.shape[1]-width))
 
     cam.release()
 
