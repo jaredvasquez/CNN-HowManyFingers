@@ -8,7 +8,7 @@ Key Requirements: Python 3+, Keras 2+, TensorFlow 1+, OpenCV 2+
 * **trainModel.ipynb** - jupyter notebook used for training model
 * **images.tgz** - compressed tarball of complete training and validation data
 * **imgs** - directory of example images used in this README
-* [model_6cat.h5](https://drive.google.com/file/d/0B5sZ8q5iqYbtZjRRRW1SUVl2SlU/view?usp=sharing) - pretrained model
+* [**model_6cat.h5**](https://drive.google.com/file/d/0B5sZ8q5iqYbtZjRRRW1SUVl2SlU/view?usp=sharing) - pretrained model
 
 The pretrained model used by the application is can be downloaded from the linked google drive.
 
