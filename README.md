@@ -12,6 +12,10 @@ Key Requirements: Python 3+, Keras 2+, TensorFlow 1+, OpenCV 2+
 
 The pretrained model used by the application is can be downloaded from google drive, linked above.
 
+## Demo
+![](http://i.imgur.com/eKIvRxV.gifv)
+![](https://media.giphy.com/media/xUn3CnUdy8NdH70yf6/giphy.gif)
+
 ## Usage
 Simply run `application.py` and hold your fingers up in the highlighted region of interest (ROI).
 The model performs best when provided a plain background without many features.
