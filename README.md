@@ -24,4 +24,5 @@ The model performs best when provided a plain background without many features.
 ### Taking Data
 To collect data, you must first select the target class 0 through 5 by hitting the corresponding key on your keyboard.
 Once you have selected your target class, you can start/stop collecting data by toggling the `s` key. 
-When collecting data the ROI will turn green and turn red again when data collection is stopped.
+
+When collecting data the ROI will turn green and turn red again when collection is stopped.
