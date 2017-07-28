@@ -82,7 +82,7 @@ Interestingly, the model seems to generalize quite well to new combinations of d
 # Error analysis 
 It occasionally happens that during the (random) image augmentation that is applied by our generator, one of the hands fingers is obscured from the image. These cases typically manifest as misclassification "error" in our accuracy but should not be a concern as the prediction made by the network is typically the same conclusion that would have been made by a human with the partial information presented them.
 
-![](https://i.imgur.com/s0exjr8.png)
+<img src="https://i.imgur.com/s0exjr8.png" width="500">
 
 The confusion matrix shows very strong performance generally, however the model shows some difficulty in correctly counting four fingers. This misclassification seems most prevalent when the hand is angled and could likely be improved with additional data, augmentation and perhaps additional model complexity. For the purposes of this prototype, this caveat is deemed acceptable but could be improved in the future.
 
