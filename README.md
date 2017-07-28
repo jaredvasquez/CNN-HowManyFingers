@@ -14,7 +14,8 @@ Key Requirements: Python 3+, Keras 2+, TensorFlow 1+, OpenCV 2+
 The pretrained model used by the application is can be downloaded from google drive, linked above.
 
 ## Demo
-Demos with and without binary mask visible.
+Demo of digit counting with and without binary mask visible. 
+
 ![](https://i.imgur.com/nbpeRgg.gif)
 ![](https://i.imgur.com/Ref2OVT.gif)
 
