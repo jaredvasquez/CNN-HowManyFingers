@@ -74,8 +74,21 @@ The model is trained with TensorFlow backend using a NVIDIA GeForce Titan X Pasc
 
 ![](https://i.imgur.com/tWWoyUO.png)
 
-## Room for improvement
-The model's predictions are sensitive to shadows and lighting in the region of interest. The model can also be 
-sensitive to features in the background. Refined image processing could be more robust to the lighting
+# Generalizability
+Interestingly, the model seems to generalize quite well to new combinations of digits that were never before seen in the training datasets.
+
+![](https://i.imgur.com/jTP4I5C.gif)
+
+# Error analysis 
+It occasionally happens that during the (random) image augmentation that is applied by our generator, one of the hands fingers is obscured from the image. These cases typically manifest as misclassification "error" in our accuracy but should not be a concern as the prediction made by the network is typically the same conclusion that would have been made by a human with the partial information presented them.
+
+![](https://i.imgur.com/s0exjr8.png)
+
+The confusion matrix shows very strong performance generally, however the model shows some difficulty in correctly counting four fingers. This misclassification seems most prevalent when the hand is angled and could likely be improved with additional data, augmentation and perhaps additional model complexity. For the purposes of this prototype, this caveat is deemed acceptable but could be improved in the future.
+
+![](https://i.imgur.com/gJczLM5.png)
+
+Lastly, the model's predictions are observed to be sensitive to shadows and lighting in the region of interest. 
+The model is also sensitive to features in the background. Refined image processing could be more robust to the lighting
 and able to isolate the hands features better. Alternatively, additional training data or augmentation with 
 busy backgrounds and various lighting might make the model more robust.
