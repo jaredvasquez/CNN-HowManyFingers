@@ -15,8 +15,8 @@ The pretrained model used by the application is can be downloaded from google dr
 
 ## Demo
 Demos with and without binary mask visible. Noise in images is coming from camera.
-![](http://i.imgur.com/nCzIzQO.gif)
-![](http://i.imgur.com/Z7iuCfN.gif)
+![](https://i.imgur.com/nbpeRgg.gif)
+![](https://i.imgur.com/Ref2OVT.gif)
 
 
 ## Usage
@@ -44,13 +44,13 @@ img = cv2.adaptiveThreshold(img, 255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C, cv2.THRESH
 ret, new = cv2.threshold(img, 25, 255, cv2.THRESH_BINARY_INV + cv2.THRESH_OTSU)
 ```
 
-A dataset is collected within the application by holding up 0 to 5 digits at different positions and orientations within the application's ROI. A training set of ~1500 images and validation set of ~300 images for each case is used for training the CNN. 
+A dataset is collected within the application by holding up 0 to 5 digits at different positions and orientations within the application's ROI. A training set of ~1500 images and validation set of ~600 images for each case is used for training the CNN. 
 
-![](http://i.imgur.com/4DJ2QhH.png)
+![](https://i.imgur.com/ylMUgE5.png)
 
 # Convolution Neural Net
 
-The CNN used for this projects consists of 4 convolutional layers with 3x3 kernels, RELU activations and integer multiples of 32 filters in each layer. Between each convolutional layer MaxPooling is  appled to reduce the models dimensionality. The feature maps produced by the convolutions are passed to a dense layer with 512 nodes and RELU activation before being fed to a sigmoid output layer with 6 nodes, defining each class.
+The CNN used for this projects consists of 4 convolutional layers with 3x3 kernels, RELU activations and integer multiples of 32 filters in each layer. Between each convolutional layer MaxPooling is  appled to reduce the models dimensionality. The feature maps produced by the convolutions are passed to a dense layer with 512 nodes and RELU activation before being fed to a softmax output layer with 6 nodes, defining each class.
 
 ```
 model = Sequential()
@@ -70,9 +70,9 @@ model.add(Dense(6, activation='sigmoid'))
 
 # Training and Performance
 
-The model is trained with TensorFlow backend using a NVIDIA GeForce Titan X Pascal for 39 epochs using batches of 128 images each. The training inputs are augmented with small randomized zooms, rotations and translations for each instance in training. A testing performance of greater than 90% accuracy is achieved, surpassing human perform in the case that the human is severely concussed or inebriated.
+The model is trained with TensorFlow backend using a NVIDIA GeForce Titan X Pascal for 40 epochs using batches of 128 images each. The training inputs are augmented with small randomized zooms, rotations and translations for each instance in training. Mirroring is also applied to the input images to not bias the results to any particular handedness. A testing performance of greater than 99% accuracy is achieved, surpassing human perform in the case that the human is severely concussed or inebriated.
 
-![](http://i.imgur.com/4CJP793.png)
+![](https://i.imgur.com/tWWoyUO.png)
 
 ## Room for improvement
 The model's predictions are sensitive to shadows and lighting in the region of interest. The model can also be 
