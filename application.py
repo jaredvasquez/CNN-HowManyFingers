@@ -83,6 +83,8 @@ def main():
             img = np.expand_dims(img, axis=-1)
             pred = classes[np.argmax(model.predict(img)[0])]
             cv2.putText(window, 'Prediction: %s' % (pred), (fx,fy+2*fh), font, 1.0, (245,210,65), 2, 1)
+            # use below for demoing purposes
+            #cv2.putText(window, 'Prediction: %s' % (pred), (x0,y0-25), font, 1.0, (255,0,0), 2, 1)
 
         # show the window
         cv2.imshow('Original', window)
