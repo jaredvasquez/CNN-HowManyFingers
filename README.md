@@ -14,7 +14,8 @@ Key Requirements: Python 3+, Keras 2+, TensorFlow 1+, OpenCV 2+
 The pretrained model used by the application is can be downloaded from google drive, linked above.
 
 ## Demo
-Demos with and without binary mask visible. Noise in images is coming from camera.
+Demo of digit counting with and without binary mask visible. 
+
 ![](https://i.imgur.com/nbpeRgg.gif)
 ![](https://i.imgur.com/Ref2OVT.gif)
 
@@ -70,7 +71,9 @@ model.add(Dense(6, activation='sigmoid'))
 
 # Training and Performance
 
-The model is trained with TensorFlow backend using a NVIDIA GeForce Titan X Pascal for 40 epochs using batches of 128 images each. The training inputs are augmented with small randomized zooms, rotations and translations for each instance in training. Mirroring is also applied to the input images to not bias the results to any particular handedness. A testing performance of greater than 99% accuracy is achieved, surpassing human perform in the case that the human is severely concussed or inebriated.
+The model is trained with TensorFlow backend using a NVIDIA GeForce Titan X Pascal for 40 epochs using batches of 128 images each. The training inputs are augmented with small randomized zooms, rotations and translations for each instance in training. Mirroring is also applied to the input images to not bias the results to any particular handedness. 
+
+A testing performance of greater than 99% accuracy is achieved, surpassing human perform in the case that the human is severely concussed or inebriated.
 
 ![](https://i.imgur.com/tWWoyUO.png)
 
