@@ -9,7 +9,7 @@ Key Requirements: Python 3+, Keras 2+, TensorFlow 1+, OpenCV 2+
 * **application.py** - application to used to collect data and predict number of fingers on the fly
 * **trainModel.ipynb** - jupyter notebook used for training model
 * **images.tgz** - compressed tarball of complete training and validation data
-* [**model_6cat.h5**](https://drive.google.com/file/d/0B5sZ8q5iqYbtZjRRRW1SUVl2SlU/view?usp=sharing) - pretrained model
+* [**model_6cat.h5**](https://drive.google.com/file/d/0B5sZ8q5iqYbtRVpqMU4yRlRDdEU/view?usp=sharing) - pretrained model
 
 The pretrained model used by the application is can be downloaded from google drive, linked above.
 
